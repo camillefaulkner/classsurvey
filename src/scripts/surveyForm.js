@@ -11,3 +11,13 @@ export const surveyForm = () => {
                 </div>`
     return html
 }
+
+
+const surveyFormContainer = document.querySelector(".surveyForm")
+
+surveyFormContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "submitsurvey") {
+        window.location.href = "success.html"
+    }
+})
+

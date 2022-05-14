@@ -124,3 +124,20 @@ input[type="reset"] {
 .surveybutton {
     font-size: 40px;
 }
+
+.days {
+    margin: 5px;
+}
+
+.success {
+    font-size: 30px;
+    margin-top: 30%;
+    margin-left: 15%;
+}
+
+
+.logout {
+    font-size: 15px;
+    margin-top: 20%;
+    margin-left: 75%;
+}

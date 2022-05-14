@@ -6,8 +6,8 @@ export const selectDays = () => {
     let html = `<h3>select <u>any</u> of the days that typically work best for you</h3>
                 <div class="daylist">`
     let dayRadioButton = days.map(day => {
-        return `<input id="checkbox" name="simplecheckbox" type="checkbox" value="${day.id}">
-                <label for="checkbox">${day.day}</label>`
+        return `<div class="days"> <input id="checkbox" name="simplecheckbox" type="checkbox" value="${day.id}">
+                <label for="checkbox">${day.day}</label></div>`
     })
     html += dayRadioButton.join('')
     html += `</div>`
