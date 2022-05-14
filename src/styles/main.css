@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.1;
+    background-color: #1d1d1d;
+    color: #fef335;
+}
+
+.survey {
+    font-size: 35px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+#surveyarrow {
+    margin-left: 2rem;
+    font-size: 80px;
+    margin-top: -1.9rem;
+}
+
+.begin {
+    display: flex;
+    flex-direction: row;
+}
+
+.welcomebutton,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    box-shadow: inset 0 0 0 0 #fef335;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+
+.welcomebutton:hover {
+    box-shadow: inset 110px 0 0 0 #fef335;
+    color: #1d1d1d;
+}
+
+
+
+
+.welcome {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 6rem;
+    left: 6rem;
+}
+
+.arrow {
+    margin-left: 2rem;
+    font-size: 100px;
+    margin-top: -1.75rem;
+}
+
+.surveyForm {
+    font-size: 20px;
+}
+
+a {
+    color: inherit;
+}
+
+
+.surveybutton,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    box-shadow: inset 0 0 0 0 #fef335;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+
+.surveybutton:hover {
+    box-shadow: inset 400px 0 0 0 #fef335;
+    color: #1d1d1d;
+    
+}
+
+
+
+.passwordbody {
+    font-family: 'Press Start 2P';
+    color: #1d1d1d;
+    background-color: white;
+    font-size: 20px;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    font-weight: 300;
+    margin-left: 35%;
+    margin-top: 17%;
+}
+
+.passwordbutton:hover {
+    color: red;
+}
+
+.unbold {
+    font-size: 30px;
+}
+
+.surveybutton {
+    font-size: 40px;
+}
