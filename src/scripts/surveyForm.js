@@ -6,7 +6,9 @@ export const surveyForm = () => {
                 ${selectDays()}
                 <br><hr>
                 ${selectTimes()}
-                <br><br><br><br><br><br>
+                <br><br><br>
+                nashville area preference <br><br>
+                optional: specific meeting location suggestion <br><br>
                 <button class="button surveybutton" id="submitsurvey">submit survey</button>
                 </div>`
     return html

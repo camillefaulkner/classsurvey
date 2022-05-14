@@ -6,8 +6,8 @@ export const selectDays = () => {
     let html = `<h3>select <u>any</u> of the days that typically work best for you</h3>
                 <div class="daylist">`
     let dayRadioButton = days.map(day => {
-        return `<div class="days"> <input id="checkbox" name="simplecheckbox" type="checkbox" value="${day.id}">
-                <label for="checkbox">${day.day}</label></div>`
+        return `<input id="checkbox" name="simplecheckbox" type="checkbox" value="${day.id}">
+                <label for="checkbox">${day.day}</label>`
     })
     html += dayRadioButton.join('')
     html += `</div>`
@@ -26,13 +26,12 @@ surveyFormContainer.addEventListener("click", clickEvent => {
 
         // // Make an object out of the user input
         const dataToSendToAPI = {
-            days: selectday
+            days: parseInt(days)
         }
         
 
         // // Send the data to the API for permanent storage
         setSelectedDays(dataToSendToAPI)
-        console.log(dataToSendToAPI)
         selectTimes()
     }
 })

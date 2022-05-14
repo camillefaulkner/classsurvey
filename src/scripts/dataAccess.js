@@ -4,7 +4,7 @@ const surveyFormContainer = document.querySelector(".surveyForm")
 const applicationState = {
     password: [],
     days: [],
-    selectedDays: new Set(),
+    selectedDays: [],
     completeSurveys: []
 }
 
@@ -70,21 +70,21 @@ export const getPassword = () => {
 }
 
 export const getSelectedDays = () => {
-    return {...applicationState.selectedDays}
+    return applicationState.selectedDays.map(day => ({ ...day }))
 }
 
 
-export const setSelectedDays = (day) => {
-    applicationState.selectedDays.add(day)
-    document.dispatchEvent(new CustomEvent("stateChanged"))
-}
-
-
-
-// export const setSelectedDays = (days) => {
-//     applicationState.selectedDays = days
-//     surveyFormContainer.dispatchEvent(new CustomEvent("stateChanged"))
+// export const setSelectedDays = (day) => {
+//     applicationState.selectedDays.add(day)
+//     document.dispatchEvent(new CustomEvent("stateChanged"))
 // }
+
+
+
+export const setSelectedDays = (days) => {
+    applicationState.selectedDays = days
+    surveyFormContainer.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 
 export const saveSurvey = (userRequest) => {
