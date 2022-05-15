@@ -74,12 +74,6 @@ export const getSelectedDays = () => {
 }
 
 
-// export const setSelectedDays = (day) => {
-//     applicationState.selectedDays.add(day)
-//     document.dispatchEvent(new CustomEvent("stateChanged"))
-// }
-
-
 
 export const setSelectedDays = (days) => {
     applicationState.selectedDays = days

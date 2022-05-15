@@ -19,7 +19,6 @@ passwordContainer.addEventListener("click", clickEvent => {
         let input = document.querySelector("input[name='password']").value
         password.find((password) => {
             if (input === password.password) {
-                console.log(`works`)
                 window.location.href = "welcome.html"
             } else {
                 window.alert(`incorrect`)

@@ -29,15 +29,17 @@ surveyFormContainer.addEventListener("click", clickEvent => {
             }
         }
 
-        let dayArray = [...selectday]
+        let dayArrays = [...selectday]
         // // Make an object out of the user input
-        const dataToSendToAPI = {
-            days: dayArray
-        }
-        
-        console.log(selectday)
+        dayArrays.map(dayArray => {
+            const dataToSendToAPI = {
+                days: dayArray
+            }
+            console.log(dataToSendToAPI)
+            setSelectedDays(dataToSendToAPI)
+        })
+
         // // Send the data to the API for permanent storage
-        setSelectedDays(dataToSendToAPI)
         selectTimes()
     }
 })
