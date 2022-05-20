@@ -2,11 +2,11 @@ import { getDays, setSelectedDays } from "./dataAccess.js"
 import { selectTimes } from "./selectTimes.js"
 
 export const selectDays = () => {
-    let days = getDays()
-    let html = `<h3>select <u>any</u> of the days that typically work best for you</h3>
+    let databaseDays = getDays()
+    let html = `<h4>select <u>any</u> of the upcoming days that work best for you</h4>
                 <div class="daylist">`
-    let dayRadioButton = days.map(day => {
-        return `<input id="checkbox_${day.id}" class="simplecheckbox" type="checkbox" value="${day.id}">
+    let dayRadioButton = databaseDays.map(day => {
+        return `<input id="checkbox--${day.id}" class="simplecheckbox" type="checkbox" value="${day.id}">
                 <label for="checkbox">${day.day}</label>`
     })
     html += dayRadioButton.join('')
@@ -16,7 +16,7 @@ export const selectDays = () => {
 
 
 const surveyFormContainer = document.querySelector(".surveyForm")
-let selectday = new Set()
+let selectedDay = new Set()
 
 surveyFormContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("checkbox")) {
@@ -25,21 +25,13 @@ surveyFormContainer.addEventListener("click", clickEvent => {
         for (const day of days) {
             // selectday.clear()
             if (day.checked === true) {
-                selectday.add(parseInt(day.value))
+                const [,dayId] = clickEvent.target.id.split("--")
+                selectedDay.add(parseInt(dayId))
             }
         }
-
-        let dayArrays = [...selectday]
-        // // Make an object out of the user input
-        dayArrays.map(dayArray => {
-            const dataToSendToAPI = {
-                days: dayArray
-            }
-            console.log(dataToSendToAPI)
-            setSelectedDays(dataToSendToAPI)
-        })
-
-        // // Send the data to the API for permanent storage
+        let selectedDayArray = [...selectedDay]
+        setSelectedDays(selectedDayArray)
+        console.log(selectedDayArray)
         selectTimes()
     }
 })

@@ -4,11 +4,13 @@ const surveyFormContainer = document.querySelector(".surveyForm")
 const applicationState = {
     password: [],
     days: [],
-    selectedDays: [],
-    completeSurveys: []
+    completeSurveys: [],
+    state: {}
 }
 
 const API = "http://localhost:8088"
+
+
 
 
 export const submitDaysAvailable = (userDaySubmission) => {
@@ -39,16 +41,6 @@ export const fetchDays = () => {
         )
 }
 
-export const fetchSelectedDays = () => {
-    return fetch(`${API}/selectedDays`) //default method is GET = i want data, give it to me please, give all of the requests
-        .then(response => response.json()) //returns array of objects in this scenario
-        .then(
-            (day) => { //array of objects is the argument here
-                // Store the external state in application state
-                applicationState.selectedDays = day //put in transient state
-            }
-        )
-}
 
 export const fetchPassword = () => {
     return fetch(`${API}/password`) //default method is GET = i want data, give it to me please, give all of the requests
@@ -69,14 +61,14 @@ export const getPassword = () => {
     return applicationState.password.map(password => ({ ...password }))
 }
 
-export const getSelectedDays = () => {
-    return applicationState.selectedDays.map(day => ({ ...day }))
+export const getState = () => {
+    return { ...applicationState.state }
 }
 
 
 
 export const setSelectedDays = (days) => {
-    applicationState.selectedDays = days
+    applicationState.state.selectedDays = days
     surveyFormContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
 

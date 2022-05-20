@@ -11,7 +11,6 @@ document.addEventListener(
     (event) => {
         if (event.target.name === "arrow") {
             document.dispatchEvent(new CustomEvent("stateChanged"))
-            console.log(`clicked`)
         }
     }
 )

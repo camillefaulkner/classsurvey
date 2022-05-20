@@ -1,4 +1,4 @@
-import { fetchDays, fetchSelectedDays } from "./dataAccess.js"
+import { fetchDays } from "./dataAccess.js"
 import { surveyForm } from "./surveyForm.js"
 
 const surveyFormContainer = document.querySelector(".surveyForm")
@@ -10,7 +10,6 @@ document.addEventListener("stateChanged", event => {
 
 const surveyFormRender = () => {
     fetchDays()
-        .then(() => fetchSelectedDays())
     //     .then(() => fetchTeamScores())
         .then(
             () => {

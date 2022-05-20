@@ -3,6 +3,8 @@ import { selectTimes } from "./selectTimes.js"
 
 export const surveyForm = () => {
     let html = `<div class="surveyForm">
+                <h2>upcoming weekend meetup</h2>
+                <br>
                 ${selectDays()}
                 <br><hr>
                 ${selectTimes()}

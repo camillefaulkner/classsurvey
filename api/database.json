@@ -7,35 +7,17 @@
   ],
   "days": [
     {
-      "id": 1,
-      "day": "monday"
-    },
-    {
-      "id": 2,
-      "day": "tuesday"
-    },
-    {
-      "id": 3,
-      "day": "wednesday"
-    },
-    {
-      "id": 4,
-      "day": "thursday"
-    },
-    {
       "id": 5,
-      "day": "friday"
+      "day": "friday may 20th"
     },
     {
       "id": 6,
-      "day": "saturday"
+      "day": "saturday may 21st"
     },
     {
       "id": 7,
-      "day": "sunday"
+      "day": "sunday may 22nd"
     }
-  ],
-  "selectedDays": [
   ],
   "completeSurveys": []
 }
