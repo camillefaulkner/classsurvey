@@ -7,16 +7,53 @@
   ],
   "days": [
     {
+      "id": 1,
+      "day": "monday"
+    },
+    {
+      "id": 2,
+      "day": "tuesday"
+    },
+    {
+      "id": 3,
+      "day": "wednesday"
+    },
+    {
+      "id": 4,
+      "day": "thursday"
+    },
+    {
       "id": 5,
-      "day": "friday may 20th"
+      "day": "friday"
     },
     {
       "id": 6,
-      "day": "saturday may 21st"
+      "day": "saturday"
     },
     {
       "id": 7,
-      "day": "sunday may 22nd"
+      "day": "sunday"
+    }
+  ],
+  "areas": [
+    {
+      "id": 1,
+      "area": "north"
+    }, {
+      "id": 2,
+      "area": "east"
+    },
+    {
+      "id": 3,
+      "area": "south"
+    },
+    {
+      "id": 4,
+      "area": "west"
+    },
+    {
+      "id": 5,
+      "area": "no preference"
     }
   ],
   "completeSurveys": []

@@ -1,21 +1,26 @@
-import { fetchDays } from "./dataAccess.js"
+import { fetchDays, fetchNashvilleAreas } from "./dataAccess.js"
+import { selectWeekDayTimes, selectWeekEndTimes } from "./selectTimes.js"
 import { surveyForm } from "./surveyForm.js"
 
 const surveyFormContainer = document.querySelector(".surveyForm")
 
 
-document.addEventListener("stateChanged", event => {
-    surveyFormRender()
-})
+surveyFormContainer.addEventListener(
+    "stateChanged",
+    customEvent => {
+        surveyFormRender()
+    })
 
 const surveyFormRender = () => {
     fetchDays()
-    //     .then(() => fetchTeamScores())
+            .then(() => fetchNashvilleAreas())
         .then(
             () => {
-    surveyFormContainer.innerHTML = surveyForm()
-        }
-    )
+                surveyFormContainer.innerHTML = surveyForm()
+            }
+        )
 }
 
 surveyFormRender()
+
+

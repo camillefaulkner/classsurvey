@@ -1,12 +1,11 @@
 import { getDays, setSelectedDays } from "./dataAccess.js"
-import { selectTimes } from "./selectTimes.js"
+import { selectWeekDayTimes, selectWeekEndTimes } from "./selectTimes.js"
 
 export const selectDays = () => {
     let databaseDays = getDays()
-    let html = `<h4>select <u>any</u> of the upcoming days that work best for you</h4>
-                <div class="daylist">`
+    let html = `<div class="daylist">`
     let dayRadioButton = databaseDays.map(day => {
-        return `<input id="checkbox--${day.id}" class="simplecheckbox" type="checkbox" value="${day.id}">
+        return `<input id="checkbox--${day.id}" class="daycheckbox" type="checkbox" value="${day.id}">
                 <label for="checkbox">${day.day}</label>`
     })
     html += dayRadioButton.join('')
@@ -21,7 +20,7 @@ let selectedDay = new Set()
 surveyFormContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("checkbox")) {
         // Get what the user typed into the form fields
-        let days = document.querySelectorAll(".simplecheckbox")
+        let days = document.querySelectorAll(".daycheckbox")
         for (const day of days) {
             // selectday.clear()
             if (day.checked === true) {
@@ -30,8 +29,9 @@ surveyFormContainer.addEventListener("click", clickEvent => {
             }
         }
         let selectedDayArray = [...selectedDay]
-        setSelectedDays(selectedDayArray)
-        console.log(selectedDayArray)
-        selectTimes()
+        setSelectedDays(selectedDayArray.sort())
+
+        // selectWeekDayTimes()
+        // selectWeekEndTimes()
     }
 })

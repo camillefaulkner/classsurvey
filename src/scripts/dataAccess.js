@@ -4,6 +4,7 @@ const surveyFormContainer = document.querySelector(".surveyForm")
 const applicationState = {
     password: [],
     days: [],
+    areas: [],
     completeSurveys: [],
     state: {}
 }
@@ -53,12 +54,27 @@ export const fetchPassword = () => {
         )
 }
 
+export const fetchNashvilleAreas = () => {
+    return fetch(`${API}/areas`) //default method is GET = i want data, give it to me please, give all of the requests
+        .then(response => response.json()) //returns array of objects in this scenario
+        .then(
+            (area) => { //array of objects is the argument here
+                // Store the external state in application state
+                applicationState.areas = area //put in transient state
+            }
+        )
+}
+
 export const getDays = () => {
     return applicationState.days.map(day => ({ ...day }))
 }
 
 export const getPassword = () => {
     return applicationState.password.map(password => ({ ...password }))
+}
+
+export const getAreas = () => {
+    return applicationState.areas.map(area => ({ ...area }))
 }
 
 export const getState = () => {
@@ -69,6 +85,16 @@ export const getState = () => {
 
 export const setSelectedDays = (days) => {
     applicationState.state.selectedDays = days
+    surveyFormContainer.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const setSelectedAreas = (areas) => {
+    applicationState.state.selectedAreas = areas
+    surveyFormContainer.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const setSuggestion = (suggestion) => {
+    applicationState.state.suggestion = suggestion
     surveyFormContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
@@ -88,22 +114,3 @@ export const saveSurvey = (userRequest) => {
         })
 }
 
-
-
-export const sendSelectedDays = (userServiceRequest) => {
-    const fetchOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userServiceRequest)
-    }
-
-
-    return fetch(`${API}/selectedDays`, fetchOptions)
-        .then(response => response.json())
-        .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-            })
-
-}

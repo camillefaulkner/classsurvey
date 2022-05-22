@@ -141,3 +141,28 @@ input[type="reset"] {
     margin-top: 20%;
     margin-left: 75%;
 }
+
+#logout:hover {
+    color: red;
+}
+
+.input {
+    margin-left: 1rem;
+    -webkit-appearance: none;
+    background-color: #6E7DAB;
+    color: #fef335;
+    font-weight: 700;
+}
+
+.daylist {
+    color: #6E7DAB;
+}
+
+/* ::placeholder { 
+  color: #fef335;
+  opacity: 0.5; 
+} */
+
+input {
+    margin-left: 20px;
+}

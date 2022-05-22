@@ -5,7 +5,7 @@ export const password = () => {
     let html = ''
     html += `
     <label class="label" for="password">what is steve's slack username?</label>
-    <input type="text" name="password" class="input" placeholder="no @ , no caps"/>
+    <input type="text" name="password" class="passwordinput" placeholder="no @ , no caps"/>
     <button class="passwordbutton" id="submitPass">submit</button>`
     return html
 }
