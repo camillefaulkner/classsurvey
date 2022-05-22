@@ -59,24 +59,22 @@ export const selectWeekEndTimes = () => {
 
 
 
-const surveyFormContainer = document.querySelector(".surveyForm")
-let selectedDay = new Set()
+// const surveyFormContainer = document.querySelector(".surveyForm")
+// let selectedDay = new Set()
 
-surveyFormContainer.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("time")) {
-        // Get what the user typed into the form fields
-        let days = document.querySelectorAll(".daycheckbox")
-        for (const day of days) {
-            // selectday.clear()
-            if (day.checked === true) {
-                const [,dayId] = clickEvent.target.id.split("--")
-                selectedDay.add(parseInt(dayId))
-            }
-        }
-        let selectedDayArray = [...selectedDay]
-        setSelectedDays(selectedDayArray)
+// surveyFormContainer.addEventListener("click", clickEvent => {
+//     if (clickEvent.target.id.startsWith("time")) {
+//         // Get what the user typed into the form fields
+//         let days = document.querySelectorAll(".daycheckbox")
+//         for (const day of days) {
+//             // selectday.clear()
+//             if (day.checked === true) {
+//                 const [,dayId] = clickEvent.target.id.split("--")
+//                 selectedDay.add(parseInt(dayId))
+//             }
+//         }
+//         let selectedDayArray = [...selectedDay]
+//         setSelectedDays(selectedDayArray)
 
-        // selectWeekDayTimes()
-        // selectWeekEndTimes()
-    }
-})
+//     }
+// })
